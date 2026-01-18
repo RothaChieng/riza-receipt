@@ -12,6 +12,7 @@ import "./style/main.css";
 function App() {
   const [items, setItems] = useState([]);
   const [lang, setLang] = useState("en");
+  const [deposit, setDeposit] = useState(0);
   const today = new Date();
   const formattedToday = today.toISOString().split('T')[0];
   const [invoiceDate, setInvoiceDate] = useState(formattedToday);
@@ -71,7 +72,7 @@ function App() {
       )}
       
       <div className="summary-section">
-        <ReceiptSummary items={items} t={t} />
+        <ReceiptSummary items={items} deposit={deposit} onDepositChange={setDeposit} t={t} />
         
         {/* ABA Payment Logo */}
         <div className="payment-logo">

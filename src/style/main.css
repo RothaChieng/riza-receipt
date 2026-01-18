@@ -134,6 +134,48 @@ body {
 .summary {
   text-align: right;
   margin-top: 1rem;
+  margin-left: auto;
+  max-width: 300px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.summary-label {
+  font-weight: 500;
+  text-align: left;
+}
+
+.summary-value {
+  font-weight: 600;
+  min-width: 100px;
+  text-align: right;
+}
+
+.total-row {
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-top: 2px solid #333;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.deposit-field {
+  position: relative;
+}
+
+.deposit-field input {
+  width: 100px;
+  padding: 0.3rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: right;
 }
 
 .summary-section {
@@ -285,11 +327,11 @@ body.dark button {
     font-size: 12px;
   }
   
-  .app {
-    max-width: 100%;
-    padding: 0;
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
   }
-  
+
   .header .logo {
     max-width: 150px;
   }
@@ -317,6 +359,14 @@ body.dark button {
   
   .date-display {
     display: inline;
+  }
+  
+  .deposit-input {
+    display: none !important;
+  }
+
+  .deposit-label {
+    display: inline !important;
   }
   
   .date-input-container label {
