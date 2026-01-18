@@ -8,6 +8,24 @@ body {
   max-width: 900px;
   margin: auto;
   padding: 1rem;
+  position: relative;
+}
+
+.app::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background-image: url('/riza-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .header {
@@ -42,6 +60,9 @@ body {
   margin-bottom: 0;
   font-weight: 500;
   font-size: 1.15rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #333;
+  display: inline-block;
 }
 
 .header .address {
@@ -313,6 +334,11 @@ body.dark button {
   .clear-all-container,
   .form {
     display: none !important;
+  }
+
+  .app::before {
+    position: absolute;
+    opacity: 0.08;
   }
   
   .table button {
