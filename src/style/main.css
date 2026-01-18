@@ -1,0 +1,337 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f5f5f5;
+}
+
+.app {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0 0 0.5rem 0;
+}
+
+.header .logo {
+  max-width: 320px;
+  height: auto;
+  margin-bottom: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+
+.header .logo:hover {
+  transform: scale(1.05);
+}
+
+.header p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.header .tagline {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.header .address {
+  font-size: 0.7rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.header .phone {
+  font-size: 0.7rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.date-input-container {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.date-input {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.date-display {
+  display: none;
+}
+
+.invoice-notice {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+  font-style: italic;
+  text-align: left;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 80px 120px auto;
+  gap: 0.5rem;
+}
+
+.form input, .form button {
+  padding: 0.6rem;
+}
+
+.table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 0.6rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th:first-child,
+.table td:first-child {
+  width: 40px;
+  text-align: center;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 80px;
+  text-align: center;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4),
+.table th:nth-child(5),
+.table td:nth-child(5) {
+  text-align: right;
+}
+
+.table th:last-child,
+.table td:last-child {
+  width: 50px;
+  text-align: center;
+}
+
+.summary {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.summary-section {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.empty-message {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.payment-logo {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.payment-logo img {
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.clear-all-container {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.clear-all-btn {
+  padding: 0.5rem 1rem;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.clear-all-btn:hover {
+  background: #cc0000;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.actions button {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+}
+
+.actions button:hover {
+  background: #f0f0f0;
+}
+
+.actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actions button:disabled:hover {
+  background: white;
+}
+
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Dark Mode
+========================= */
+
+body.dark {
+  background: #121212;
+  color: #ffffff;
+}
+
+body.dark .app {
+  background: transparent;
+}
+
+body.dark .header .logo {
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.2)) brightness(1.1);
+  mix-blend-mode: normal;
+}
+
+body.dark table {
+  background: #1e1e1e;
+}
+
+body.dark input,
+body.dark button {
+  background: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333;
+}
+
+/* =========================
+   Print Styles
+========================= */
+
+@media print {
+  @page {
+    size: A5;
+    margin: 10mm;
+  }
+  
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  @page {
+    margin: 0;
+  }
+  
+  body {
+    margin: 10mm;
+  }
+  
+  .actions,
+  .clear-all-container,
+  .form {
+    display: none !important;
+  }
+  
+  .table button {
+    display: none !important;
+  }
+  
+  .table th:last-child,
+  .table td:last-child {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    font-size: 12px;
+  }
+  
+  .app {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .header .logo {
+    max-width: 150px;
+  }
+  
+  .header .address,
+  .header .phone {
+    font-size: 0.6rem;
+  }
+  
+  .header .tagline {
+    font-size: 1.2rem;
+  }
+  
+  .date-input-container {
+    font-size: 0.75rem;
+  }
+  
+  .date-input {
+    font-size: 0.75rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    display: none;
+  }
+  
+  .date-display {
+    display: inline;
+  }
+  
+  .date-input-container label {
+    display: inline;
+  }
+  
+  .table {
+    font-size: 0.85rem;
+  }
+  
+  .summary {
+    font-size: 0.9rem;
+  }
+  
+  .summary-section {
+    page-break-inside: avoid;
+  }
+}
